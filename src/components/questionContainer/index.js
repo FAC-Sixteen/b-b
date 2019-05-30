@@ -1,7 +1,7 @@
 import React from "react";
-// import { fetchData, api_base } from "./../../utils/fetchData.js";
 import Question from "../question/index.js";
 import Answers from "../answers/index.js";
+import TimerText from "../timer/index.js";
 
 const QuestionContainer = ({ data }) => {
   const [counter, setCounter] = React.useState(0);
@@ -16,26 +16,18 @@ const QuestionContainer = ({ data }) => {
   };
 
   React.useEffect(() => {
-    // const url = api_base;
     if (correct === true) {
-      console.log("you win");
+      alert("you win");
       setCounter(counter + 1);
     }
     if (correct === false) {
-      console.log("you lose");
+      alert("you lose");
       setCounter(counter + 1);
     }
 
     setCorrect("correct");
     console.log(counter);
     console.log(data);
-
-    // fetchData(url)
-    //   .then(response => {
-    //     console.log("this is response", response);
-    //     return setData(response);
-    //   })
-    //   .catch(err => console.log(err));
   }, [correct]);
 
   if (counter >= data.length) {
@@ -54,6 +46,7 @@ const QuestionContainer = ({ data }) => {
         answersArr={incorrect_answers.concat(correct_answer)}
         checkCorrect={isCorrectAnswer}
       />
+      <TimerText />
     </div>
   );
 };
