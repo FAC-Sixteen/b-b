@@ -1,6 +1,6 @@
 import React from "react";
 // import Answer from "./answer/index.js";
-import "./style.css";
+// import "./style.css";
 
 const Answers = ({ answersArr, checkCorrect }) => {
   const answersEncoded = answersArr.map(encoded => {
