@@ -7,8 +7,17 @@ const QuestionContainer = () => {
   const [data, setData] = React.useState(null);
   const [correct, setCorrect] = React.useState(false);
 
+  const isCorrectAnswer = answer => {
+    setCorrect(answer === correct_answer);
+  };
+
   React.useEffect(() => {
     const url = api_base;
+    if (correct === true) {
+      console.log("you win");
+    }
+    setCorrect(false);
+
     fetchData(url)
       .then(response => {
         console.log("this is response", response);
@@ -17,19 +26,11 @@ const QuestionContainer = () => {
       .catch(err => console.log(err));
   }, [correct]);
 
-  const isCorrectAnswer = answer => {
-    setCorrect(answer === correct_answer);
-  };
-
   if (!data) {
     return null;
   }
 
   const { question, incorrect_answers, correct_answer } = data.results[0];
-
-  if (correct === true) {
-    alert("you win");
-  }
 
   return (
     <div>
