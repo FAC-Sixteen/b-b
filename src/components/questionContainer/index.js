@@ -17,11 +17,11 @@ const QuestionContainer = ({ data }) => {
 
   React.useEffect(() => {
     if (correct === true) {
-      alert("you win");
+      alert("That's Correct :)");
       setCounter(counter + 1);
     }
     if (correct === false) {
-      alert("you lose");
+      alert("That's Wrong :(");
       setCounter(counter + 1);
     }
 
@@ -38,10 +38,7 @@ const QuestionContainer = ({ data }) => {
 
   return (
     <div>
-      <Question
-        question={question}
-        // class={isCorrect ? "correctButton" : "normalButton"}
-      />
+      <Question question={question} />
       <Answers
         answersArr={incorrect_answers.concat(correct_answer)}
         checkCorrect={isCorrectAnswer}
