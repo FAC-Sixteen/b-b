@@ -1,11 +1,28 @@
 import React from "react";
+import { fetchData, api_base } from "./utils/fetchData.js";
 
 import QuestionContainer from "./components/questionContainer/index";
 
 function App() {
+  const [data, setData] = React.useState(null);
+  const url = api_base;
+
+  React.useEffect(() => {
+    fetchData(url)
+      .then(response => {
+        console.log("this is response", response);
+        return setData(response.results);
+      })
+      .catch(err => console.log(err));
+  }, []);
+
+  if (!data) {
+    return null;
+  }
+
   return (
     <div>
-      <QuestionContainer />
+      <QuestionContainer data={data} />
     </div>
   );
 }
