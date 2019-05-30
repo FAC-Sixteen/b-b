@@ -5,7 +5,7 @@ import Answers from "../answers/index.js";
 
 const QuestionContainer = () => {
   const [data, setData] = React.useState(null);
-  //   const url = api_base;
+  const [correct, setCorrect] = React.useState(false);
 
   React.useEffect(() => {
     const url = api_base;
@@ -15,7 +15,11 @@ const QuestionContainer = () => {
         return setData(response);
       })
       .catch(err => console.log(err));
-  }, []);
+  }, [correct]);
+
+  const isCorrectAnswer = answer => {
+    setCorrect(answer === correct_answer);
+  };
 
   if (!data) {
     return null;
@@ -23,12 +27,20 @@ const QuestionContainer = () => {
 
   const { question, incorrect_answers, correct_answer } = data.results[0];
 
-  // console.log("this is>>>>", question, incorrect_answers, correct_answer);
+  if (correct === true) {
+    alert("you win");
+  }
 
   return (
     <div>
-      <Question question={question} />
-      <Answers answersArr={incorrect_answers.concat(correct_answer)} />
+      <Question
+        question={question}
+        // class={isCorrect ? "correctButton" : "normalButton"}
+      />
+      <Answers
+        answersArr={incorrect_answers.concat(correct_answer)}
+        checkCorrect={isCorrectAnswer}
+      />
     </div>
   );
 };
