@@ -21,14 +21,14 @@ const QuestionContainer = () => {
     return null;
   }
 
+  const { question, incorrect_answers, correct_answer } = data.results[0];
+
+  // console.log("this is>>>>", question, incorrect_answers, correct_answer);
+
   return (
     <div>
-      <Question question={data.results[0].question} />
-      {/* <Answers
-        answer={
-          (data.result[0].correct_answers, data.result[0].incorrect_answers)
-        }
-      /> */}
+      <Question question={question} />
+      <Answers answersArr={incorrect_answers.concat(correct_answer)} />
     </div>
   );
 };

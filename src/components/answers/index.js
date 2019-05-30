@@ -1,12 +1,15 @@
 import React from "react";
-import Answer from "../answer/index.js";
+import Answer from "./answer/index.js";
 
-const Answers = ({ correct, incorrect }) => {
+const Answers = ({ answersArr }) => {
   const [answers, setAnswers] = React.useState([]);
 
   React.useEffect(() => {
-    setAnswers((correct, incorrect) => incorrect.concat(correct));
-  });
+    setAnswers(() => answersArr);
+  }, []);
+
+  console.log("this is answers>>>>", answers);
+  console.log(typeof answers);
 
   return (
     <div>
