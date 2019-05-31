@@ -1,7 +1,7 @@
 import React from "react";
-import { fetchData, api_base } from "./utils/fetchData.js";
+import { fetchData, api_base } from "./utils/fetchData";
 
-import QuestionContainer from "./components/questionContainer/index";
+import QuestionContainer from "./components/questionContainer/QuestionContainer";
 
 function App() {
   const [data, setData] = React.useState(null);

@@ -1,8 +1,8 @@
 import React from "react";
-import Question from "../question/index.js";
-import Answers from "../answers/index.js";
-import TimerText from "../timer/index.js";
-// import "./style.css";
+import Question from "../question/Question";
+import Answers from "../answers/Answers";
+import TimerText from "../timer/Timer";
+// import "./styleQuestionContainer.css";
 
 const QuestionContainer = ({ data }) => {
   const [counter, setCounter] = React.useState(0);
@@ -10,11 +10,12 @@ const QuestionContainer = ({ data }) => {
   const [timer, setTimer] = React.useState(10);
 
   const isCorrectAnswer = answer => {
-    if (answer === correct_answer) {
-      setCorrect(true);
-    } else {
-      setCorrect(false);
-    }
+    setCorrect(answer === correct_answer);
+  };
+
+  const setNextQuestion = () => {
+    setCounter(counter + 1);
+    setTimer(10);
   };
 
   React.useEffect(() => {
@@ -24,15 +25,13 @@ const QuestionContainer = ({ data }) => {
 
     if (correct === true) {
       alert("That's Correct :)");
-      setCounter(counter + 1);
-      setTimer(10);
+      setNextQuestion();
     }
     if (correct === false) {
-      if (timer !== 10) {
-        alert(`Sorry that's Wrong :( The correct answer is ${correct_answer}`);
-      }
-      setCounter(counter + 1);
-      setTimer(10);
+      // if (timer !== 10) {
+      alert(`Sorry that's Wrong :( The correct answer is ${correct_answer}`);
+      // }
+      setNextQuestion();
     }
 
     setCorrect("correct");

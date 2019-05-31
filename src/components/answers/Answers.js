@@ -1,5 +1,5 @@
 import React from "react";
-// import "./style.css";
+// import "./styleAnswer.css";
 
 const Answers = ({ answersArr, checkCorrect }) => {
   const answersEncoded = answersArr.map(encoded => {
