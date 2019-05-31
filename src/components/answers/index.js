@@ -15,7 +15,7 @@ const Answers = ({ answersArr, checkCorrect }) => {
   });
 
   return (
-    <div>
+    <div class="answers-container">
       {answersEncoded
         .sort(() => Math.random() - 0.5)
         .map((answer, i) => (

@@ -2,6 +2,7 @@ import React from "react";
 import Question from "../question/index.js";
 import Answers from "../answers/index.js";
 import TimerText from "../timer/index.js";
+import "./style.css";
 
 const QuestionContainer = ({ data }) => {
   const [counter, setCounter] = React.useState(0);
@@ -51,7 +52,7 @@ const QuestionContainer = ({ data }) => {
   const { question, incorrect_answers, correct_answer } = data[counter];
 
   return (
-    <div>
+    <div className="main-container">
       <Question question={question} />
       <Answers
         answersArr={incorrect_answers.concat(correct_answer)}
