@@ -1,5 +1,5 @@
 import React from "react";
-// import "./styleAnswer.css";
+import "./styleAnswer.css";
 
 const Answers = ({ answersArr, checkCorrect }) => {
   const answersEncoded = answersArr.map(encoded => {
@@ -15,19 +15,17 @@ const Answers = ({ answersArr, checkCorrect }) => {
 
   return (
     <div class="answers-container">
-      {answersEncoded
-        // .sort(() => Math.random() - 0.5)
-        .map((answer, i) => (
-          <button
-            className="answers"
-            key={i}
-            type="button"
-            aria-label="answer button"
-            onClick={() => checkCorrect(answer)}
-          >
-            {answer}
-          </button>
-        ))}
+      {answersEncoded.map((answer, i) => (
+        <button
+          className="answers"
+          key={i}
+          type="button"
+          aria-label="answer button"
+          onClick={() => checkCorrect(answer)}
+        >
+          {answer}
+        </button>
+      ))}
     </div>
   );
 };

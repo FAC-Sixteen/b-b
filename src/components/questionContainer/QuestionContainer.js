@@ -2,12 +2,13 @@ import React from "react";
 import Question from "../question/Question";
 import Answers from "../answers/Answers";
 import TimerText from "../timer/Timer";
-// import "./styleQuestionContainer.css";
+import "./styleQuestionContainer.css";
 
 const QuestionContainer = ({ data }) => {
   const [counter, setCounter] = React.useState(0);
   const [correct, setCorrect] = React.useState(null);
   const [timer, setTimer] = React.useState(10);
+  const [sortedAnswers, sortAnswers] = React.useState([]);
 
   const isCorrectAnswer = answer => {
     setCorrect(answer === correct_answer);
@@ -19,23 +20,29 @@ const QuestionContainer = ({ data }) => {
   };
 
   React.useEffect(() => {
-    // const countdown = setInterval(() => {
-    //   setTimer(time => time - 1);
-    // }, 1000);
+    if (counter < data.length) {
+      sortAnswers(
+        incorrect_answers.concat(correct_answer).sort(() => Math.random() - 0.5)
+      );
+    }
+
+    const countdown = setInterval(() => {
+      setTimer(time => time - 1);
+    }, 1000);
 
     if (correct === true) {
       alert("That's Correct :)");
       setNextQuestion();
     }
     if (correct === false) {
-      // if (timer !== 10) {
-      alert(`Sorry that's Wrong :( The correct answer is ${correct_answer}`);
-      // }
+      if (timer !== 10) {
+        alert(`Sorry that's Wrong :( The correct answer is ${correct_answer}`);
+      }
       setNextQuestion();
     }
 
     setCorrect("correct");
-    // return () => clearInterval(countdown);
+    return () => clearInterval(countdown);
   }, [correct]);
 
   if (timer === 0) {
@@ -53,11 +60,8 @@ const QuestionContainer = ({ data }) => {
   return (
     <div className="main-container">
       <Question question={question} />
-      <Answers
-        answersArr={incorrect_answers.concat(correct_answer)}
-        checkCorrect={isCorrectAnswer}
-      />
-      {/* <TimerText timer={timer} /> */}
+      <Answers answersArr={sortedAnswers} checkCorrect={isCorrectAnswer} />
+      <TimerText timer={timer} />
     </div>
   );
 };
