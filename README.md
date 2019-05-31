@@ -1,5 +1,28 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0d0495da-9f6e-4448-ada0-70dc5214bcce/deploy-status)](https://app.netlify.com/sites/pensive-leakey-710d7b/deploys)
 
+### React Project
+
+https://pensive-leakey-710d7b.netlify.com/
+
+---
+### Team
+
+@bantek89
+@Baalwaan
+
+---
+
+### User Journey
+
+- As a user, I would want to see a simple landing page
+- as a user, I want to click on any button to answer question
+- As a user, I would like to know if answer is correct/incorrect
+- as a user, I would like to see my score at the end 
+- as user, I would like to restart the game at the end
+
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -27,44 +50,41 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Day 1
+	
+- File structure planning (modularise as much as possible)
+- Choose a simple API (free quiz planning)
+- Planning layout of page
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+![](https://i.imgur.com/GbGe1W1.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Challenges 
 
-### Code Splitting
+- Making fetched data from QuestionContainer component accessible to other components
+- Modularising components and calling them from another component
+- When to use default export and export
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+---
 
-### Analyzing the Bundle Size
+### Day 2
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- Getting answers to show up on each button
+- Display answers in random order
+- Countdown timer for each question
+- Apply some styling
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Challenges
 
-### Advanced Configuration
+- 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
+Interesting things
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Some questions and answers from api come encoded
