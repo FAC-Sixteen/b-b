@@ -3,6 +3,7 @@
 ### React Project
 
 https://pensive-leakey-710d7b.netlify.com/
+![](https://i.imgur.com/EJMVlux.png)
 
 ---
 ### Team
@@ -51,8 +52,7 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 
-
-
+---
 
 ### Day 1
 	
@@ -67,7 +67,7 @@ Your app is ready to be deployed!
 Challenges 
 
 - Making fetched data from QuestionContainer component accessible to other components
-- Modularising components and calling them from another component
+- Modularising components and calling them from elsewhere
 - When to use default export and export
 
 ---
@@ -82,9 +82,21 @@ Challenges
 
 Challenges
 
+- Sorting answers form api to shuffle answers 
+- Things being Rerendered unexpectedly
+- Timer rerendering entire page and displaying new set of answers each second
 - 
 
 
-Interesting things
+Things learnt
 
-- Some questions and answers from api come encoded
+- Questions and answers from api come encoded
+- A better understanding of how props are accessed
+
+
+
+### Stretch Goals
+
+- A styled div displaying Correct and incorrect Answers when buttons are clicked
+
+
