@@ -1,6 +1,5 @@
 import React from "react";
-// import Answer from "./answer/index.js";
-import "./style.css";
+// import "./style.css";
 
 const Answers = ({ answersArr, checkCorrect }) => {
   const answersEncoded = answersArr.map(encoded => {
@@ -17,7 +16,7 @@ const Answers = ({ answersArr, checkCorrect }) => {
   return (
     <div class="answers-container">
       {answersEncoded
-        .sort(() => Math.random() - 0.5)
+        // .sort(() => Math.random() - 0.5)
         .map((answer, i) => (
           <button
             className="answers"

@@ -2,11 +2,11 @@ import React from "react";
 import Question from "../question/index.js";
 import Answers from "../answers/index.js";
 import TimerText from "../timer/index.js";
-import "./style.css";
+// import "./style.css";
 
 const QuestionContainer = ({ data }) => {
   const [counter, setCounter] = React.useState(0);
-  const [correct, setCorrect] = React.useState("correct");
+  const [correct, setCorrect] = React.useState(null);
   const [timer, setTimer] = React.useState(10);
 
   const isCorrectAnswer = answer => {
@@ -18,9 +18,9 @@ const QuestionContainer = ({ data }) => {
   };
 
   React.useEffect(() => {
-    const countdown = setInterval(() => {
-      setTimer(time => time - 1);
-    }, 1000);
+    // const countdown = setInterval(() => {
+    //   setTimer(time => time - 1);
+    // }, 1000);
 
     if (correct === true) {
       alert("That's Correct :)");
@@ -36,7 +36,7 @@ const QuestionContainer = ({ data }) => {
     }
 
     setCorrect("correct");
-    return () => clearInterval(countdown);
+    // return () => clearInterval(countdown);
   }, [correct]);
 
   if (timer === 0) {
@@ -58,7 +58,7 @@ const QuestionContainer = ({ data }) => {
         answersArr={incorrect_answers.concat(correct_answer)}
         checkCorrect={isCorrectAnswer}
       />
-      <TimerText timer={timer} />
+      {/* <TimerText timer={timer} /> */}
     </div>
   );
 };
